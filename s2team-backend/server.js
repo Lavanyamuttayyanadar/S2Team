@@ -5,7 +5,8 @@ const Db = require('./Database')
 const Constants = require('./Conts');
 const app = express();
 const jwt = require("jsonwebtoken")
-const Genric = require("./Genric");
+const Genric = require("./Modules/Generic");
+const Admin = require("./Modules/Admin")
 app.use(express.json());
 app.use(Auth);
 
@@ -23,6 +24,9 @@ app.post('/Login', async (req, res) => {
         Constants.ressend("Incorrect",200,res);
     }
 });
+
+app.use('/Admin',Admin)
+
 const db = Constants.Database;
 try{
     Db.connect({user:db.Username,host:db.Host,database:db.Database,password:db.Password,port:db.Port});
