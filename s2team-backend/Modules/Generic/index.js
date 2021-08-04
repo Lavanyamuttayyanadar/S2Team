@@ -1,6 +1,6 @@
-const Db = require('../Database');
+const Db = require('../../Database');
 const bcrypt = require('bcryptjs');
-const Conts = require('../Conts');
+const Conts = require('../../Conts');
 module.exports = {
     IsUserPresent: async function(Username){
         const result = await Db.query("SELECT * FROM users WHERE username = $1",[Username]);
