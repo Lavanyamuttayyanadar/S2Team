@@ -4,7 +4,14 @@ var pool = null;
 
 
 module.exports = {
-    query: (text, params) => pool.query(text, params),
+    query: async (text, params) => {
+        return new Promise(
+            (res,rej)=>{
+                    pool.query(text, params)
+                    .then((data)=>res(data))
+                    .catch((e)=>rej(e))
+            })
+        },
     connect: async ({user,host,database,password,port})=> {
         return new Promise(async (resolve,reject)=>{
             pool = new Pool({
