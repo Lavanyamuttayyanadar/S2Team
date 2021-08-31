@@ -69,13 +69,13 @@ dataSource.map((obj)=>{if(obj.id==selected);})
       />
   <center>
     <br/>
-        <Button onClick={openAddDialog} className="controls" npm variant="contained" color="primary" type="submit">
-        Add SubAdmin
-        </Button>
+        <Button onClick={openAddDialog} className="controls" variant="contained" color="primary" type="submit">
+        Add SubAdmin</Button> &nbsp;
         <span className={visible}>
-         <Button onClick={openEditDialog} className="controls" variant="contained" color="primary">Edit</Button>
+         <Button onClick={openEditDialog} className="controls" variant="contained" color="primary">Edit</Button>&nbsp; 
          <Button onClick={Delete} className="controls" variant="contained" color="primary" type="submit">Delete</Button>
         </span>
+        
       </center>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" fullWidth={true}>
         <DialogTitle id="form-dialog-title"><center>Edit Form</center></DialogTitle>
